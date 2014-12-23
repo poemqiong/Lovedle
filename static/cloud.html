@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <title>cloud</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=10">
+
+    <!-- Le styles -->
+    <link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="/static/css/jqcloud.css" rel="stylesheet">
+    <style type="text/css">
+        .facet_target_span {
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .facet_target_selected {
+            color: red;
+        }
+
+        body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+
+        #div_keyword:after {
+            content: "Facet";
+        }
+
+        #div_competitor:after {
+            content: "Competitor";
+        }
+
+        .show_more_cl {
+            font-size: large;
+            text-align: right;
+            font-style: italic;
+            cursor: pointer;
+        }
+
+        .keyword_card {
+            width: 120px;
+            height: 30px;
+            line-height: 30px;
+            font-size: large;
+            vertical-align: middle;
+            background-color: #ffffff;
+            color: black;
+            padding: 13px 30px 13px 17px;
+            box-shadow: inset 1px 1px 0 rgba(0,0,0,.1),inset 0 -1px 0 rgba(0,0,0,.07);
+            background-clip: padding-box;
+            border: solid transparent;
+            border-width: 1px 1px 1px 6px;
+            font-weight: normal;
+            text-shadow: initial;
+        }
+
+        .keyword_span {
+            font-size: large;
+            color: black;
+            cursor: pointer;
+            padding-right: 15px;
+            margin-left: 0px;
+            /*text-decoration: underline;*/
+        }
+
+        .keyword_span_selected {
+            color: red;
+        }
+
+        .facet_selected {
+            color: red;
+        }
+
+        .x_move {
+            position: relative;
+            top: -5px;
+            right: -15px;
+        }
+
+        .facet_name {
+            font-size: large;
+            margin-right: 15px;
+        }
+
+        .facet_keyword {
+            font-size: small;
+        }
+
+        .div_facet_line {
+            cursor: pointer;
+        }
+
+        .hotness-scale {
+            background-color: #cfd5d8;
+            font-size: 0;
+            height: 8px;
+            margin: 0;
+            padding: 0;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .continuous-hotness-scale {
+            height: 10px;
+            position: relative;
+            width: 50px;
+        }
+
+        .continuous-hotness-scale-background {
+            background-color: #eaeaea;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .continuous-hotness-scale-filling {
+            height: 100%;
+            position: absolute;
+            top: 0;
+        }
+    </style>
+    <link href="/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/static/css/docs.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container-fluid" style="width: 800px; margin-left: auto; margin-right: auto;">
+        <table>
+            <tr>
+                <td style="width: 800px; height: 100px;">
+                    <div>
+                        <img src="http://lh4.ggpht.com/p25IAB79wl4P5GJ91hkn906XnYDINnjvlP9jzj0jQVtxFsYq-mm40mV2PeVdcvZ2uCPCZXq9bfvaEQ-p59CKjwMRaiPXYb-EmPlw0MAg1w=s660" alt="Google" width="160" height="34">
+                        <span style="margin-left: 5px; font-size: x-large; position: relative; top: 6px;"><a href="\search">Lovedle</a></span>
+                    </div>
+                    <div>
+                    </div>
+
+                    </div>
+                </td>
+            </tr>
+
+            
+            <tr>
+                <td style="height: 15px;"></td>
+            </tr>
+        
+            <tr>
+                <td>
+                    <div id='word_cloud' style="width: 800px; height: 500px; margin-left: auto; margin-right: auto; position: relative; top: -20px; background-color: rgba(247, 247, 247, 0.42);"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <hr />
+        <footer>
+            <p>&copy; Lovedle 2014</p>
+        </footer>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.js"></script>
+    <script src="/static/js/jquery.text-overflow.js"></script>
+    <script src="/static/js/jqcloud-1.0.4.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/canvasjs.min.js"></script>
+
+    <script lang="javascript" type="text/javascript">
+
+        var word_list = [{{labels}}]; 
+
+
+        $(function() {            
+            $("#word_cloud").jQCloud(word_list);
+         });
+
+
+
+    </script>
+</body>
+</html>
